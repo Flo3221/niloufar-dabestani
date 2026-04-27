@@ -84,12 +84,7 @@
     }
 
     /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 1rem 2.5rem; display: flex; align-items: center; justify-content: space-between;
-      backdrop-filter: blur(20px) saturate(1.5);
-      background: rgba(11,21,38,.85); border-bottom: 1px solid var(--border);
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2.5rem; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(20px) saturate(1.5); background: rgba(11,21,38,.85); border-bottom: 1px solid var(--border); }
     .nav-brand { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--white); letter-spacing: .03em; }
     .nav-brand span { color: var(--teal); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -100,13 +95,7 @@
 
     /* HERO */
     #hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 2.5rem 5rem; position: relative; overflow: hidden; }
-    #hero::after {
-      content: ''; position: absolute; inset: 0;
-      background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 64px 64px;
-      mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black 25%, transparent 100%);
-      pointer-events: none; z-index: 0;
-    }
+    #hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black 25%, transparent 100%); pointer-events: none; z-index: 0; }
     .hero-glow { position: absolute; top: -5%; right: -10%; width: 60vw; max-width: 750px; aspect-ratio: 1; background: radial-gradient(ellipse at center, rgba(45,212,191,.1) 0%, transparent 65%); pointer-events: none; z-index: 0; animation: glowPulse 9s ease-in-out infinite alternate; }
     .hero-glow2 { position: absolute; bottom: 5%; left: -10%; width: 40vw; max-width: 500px; aspect-ratio: 1; background: radial-gradient(ellipse at center, rgba(45,212,191,.05) 0%, transparent 70%); pointer-events: none; z-index: 0; animation: glowPulse 12s ease-in-out 2s infinite alternate; }
     @keyframes glowPulse { from { transform: scale(1); } to { transform: scale(1.1) translateY(-3%); } }
@@ -115,19 +104,15 @@
 
     .hero-eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.1rem; display: flex; align-items: center; gap: .8rem; opacity: 0; animation: fadeUp .8s .2s ease forwards; }
     .hero-eyebrow::before { content: ''; display: block; width: 30px; height: 1.5px; background: var(--teal); }
-
     h1 { font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.06; color: var(--white); letter-spacing: -.01em; margin-bottom: 1.1rem; opacity: 0; animation: fadeUp .8s .35s ease forwards; }
     h1 em { font-style: italic; color: var(--teal); }
-
     .hero-position { display: inline-flex; align-items: center; gap: .6rem; font-size: .84rem; font-weight: 500; color: var(--teal); background: var(--teal-pale); border: 1px solid var(--border); padding: .45rem 1rem; border-radius: 50px; margin-bottom: 1.3rem; opacity: 0; animation: fadeUp .8s .45s ease forwards; }
     .hero-position::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 0 rgba(45,212,191,.5); animation: ping 1.8s ease-in-out infinite; }
     @keyframes ping { 0%,100% { box-shadow: 0 0 0 0 rgba(45,212,191,.5); } 50% { box-shadow: 0 0 0 6px rgba(45,212,191,0); } }
-
     .hero-subtitle { font-size: 1rem; color: var(--gray-300); max-width: 510px; margin-bottom: 2rem; line-height: 1.7; opacity: 0; animation: fadeUp .8s .55s ease forwards; }
     .hero-tags { display: flex; flex-wrap: wrap; gap: .55rem; margin-bottom: 2.5rem; opacity: 0; animation: fadeUp .8s .65s ease forwards; }
     .tag { font-size: .74rem; font-weight: 500; letter-spacing: .05em; padding: .32rem .8rem; border-radius: 50px; border: 1px solid var(--border); color: var(--teal); background: var(--teal-pale); transition: background .2s, transform .2s; }
     .tag:hover { background: rgba(45,212,191,.22); transform: translateY(-2px); }
-
     .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .8s .75s ease forwards; }
     .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .72rem 1.8rem; border-radius: 50px; font-size: .87rem; font-weight: 600; transition: all .25s; cursor: pointer; border: none; font-family: var(--font-sans); }
     .btn-primary { background: var(--teal); color: var(--navy); }
@@ -135,14 +120,21 @@
     .btn-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--border); }
     .btn-outline:hover { background: var(--teal-pale); opacity: 1; transform: translateY(-2px); }
 
-    /* Photo */
+    /* ★ PHOTO — key rules */
     .hero-photo-wrap { position: relative; opacity: 0; animation: fadeIn 1s .5s ease forwards; }
     .photo-ring { position: absolute; inset: -14px; border-radius: var(--radius-lg); border: 1px solid var(--border); animation: ringRotate 20s linear infinite; }
     .photo-ring-2 { position: absolute; inset: -26px; border-radius: 28px; border: 1px dashed rgba(45,212,191,.1); }
     @keyframes ringRotate { 0% { clip-path: polygon(0 0,100% 0,100% 3%,0 3%); } 25% { clip-path: polygon(97% 0,100% 0,100% 100%,97% 100%); } 50% { clip-path: polygon(0 97%,100% 97%,100% 100%,0 100%); } 75% { clip-path: polygon(0 0,3% 0,3% 100%,0 100%); } 100% { clip-path: polygon(0 0,100% 0,100% 3%,0 3%); } }
-    .hero-photo { width: 100%; border-radius: var(--radius-lg); object-fit: cover; aspect-ratio: 3/4; border: 2px solid var(--navy-light); box-shadow: 0 0 80px rgba(45,212,191,.12); background: var(--navy-light); }
-    .hero-badge { position: absolute; bottom: -12px; left: -16px; background: var(--navy-mid); border: 1px solid var(--border); border-radius: var(--radius-md); padding: .7rem 1rem; backdrop-filter: blur(12px); font-size: .78rem; }
-    .hero-badge strong { color: var(--teal); display: block; font-size: 1.1rem; font-family: var(--font-serif); font-weight: 400; }
+    .hero-photo {
+      width: 100%;
+      height: 400px;           /* fixed height so photo always fills the space */
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+      object-position: center top;  /* shows face, not chest */
+      border: 2px solid var(--navy-light);
+      box-shadow: 0 0 80px rgba(45,212,191,.12);
+      display: block;
+    }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -254,7 +246,12 @@
     .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
 
     /* RESPONSIVE */
-    @media (max-width: 920px) { .hero-inner { grid-template-columns: 1fr; gap: 3rem; } .hero-photo-wrap { width: 240px; margin: 0 auto; } .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    @media (max-width: 920px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-photo-wrap { width: 240px; margin: 0 auto; }
+      .hero-photo { height: 320px; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
     @media (max-width: 640px) {
       :root { --gap: 4rem; }
       section { padding: var(--gap) 1.4rem; }
@@ -264,7 +261,6 @@
       .nav-links.open a { font-size: 1.1rem; }
       .nav-toggle { display: block; z-index: 101; }
       .contact-card { padding: 2rem 1.3rem; }
-      .hero-badge { display: none; }
     }
   </style>
 </head>
@@ -289,7 +285,10 @@
   <section id="hero">
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
+
     <div class="hero-inner">
+
+      <!-- LEFT: text -->
       <div>
         <p class="hero-eyebrow">Researcher · Engineer · Innovator</p>
         <h1>Dr. Niloufar<br><em>Dabestani</em></h1>
@@ -314,18 +313,28 @@
             Publications
           </a>
           <a href="#contact" class="btn btn-outline">Get in touch</a>
-          <!-- ★ Uncomment to add CV download:
-          <a href="assets/CV_Niloufar_Dabestani.pdf" download class="btn btn-outline">Download CV</a> -->
         </div>
-      </div>
+      </div><!-- end left -->
 
-     <div class="hero-photo-wrap">
+      <!-- RIGHT: photo -->
+      <!--
+        ★ PHOTO SETUP:
+        Upload "photo.jpg" to the ROOT of your GitHub repo (same level as index.html).
+        The src below is already set to "photo.jpg" — no subfolders needed.
+      -->
+      <div class="hero-photo-wrap">
         <div class="photo-ring-2"></div>
         <div class="photo-ring"></div>
-        <img class="hero-photo" src="photo.jpg" alt="Dr. Niloufar Dabestani"
-             style="object-fit:cover; object-position:center top;" />
-      </div>
-  </section>
+        <img
+          class="hero-photo"
+          src="photo.jpg"
+          alt="Dr. Niloufar Dabestani"
+          onerror="this.style.opacity='0'"
+        />
+      </div><!-- end right / hero-photo-wrap -->
+
+    </div><!-- end hero-inner -->
+  </section><!-- end hero -->
 
   <!-- ABOUT -->
   <section id="about">
@@ -399,7 +408,6 @@
       <h2 class="reveal">Education &amp; <span>Experience</span></h2>
       <div class="divider reveal"></div>
       <div class="timeline">
-
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-date">December 2025 — Present</div>
@@ -412,7 +420,6 @@
             <li>Supervision of PhD and master's students in transport systems modelling.</li>
           </ul>
         </div>
-
         <div class="timeline-item reveal d1">
           <div class="timeline-dot"></div>
           <div class="timeline-date">January 2022 — November 2025</div>
@@ -422,7 +429,6 @@
           Advisors: Prof. Ioannis Papamichail &amp; Prof. Markos Papageorgiou.<br>
           Research associate — TrafficFluid ERC Advanced Grant (Horizon 2020, no. 833915).</p>
         </div>
-
         <div class="timeline-item reveal d2">
           <div class="timeline-dot dim"></div>
           <div class="timeline-date dim">2019 — 2021</div>
@@ -430,7 +436,6 @@
           <div class="timeline-sub">Kharazm Power Engineering Group, Iran</div>
           <p class="timeline-desc">Design of electrical substations for large-scale industrial infrastructure.</p>
         </div>
-
         <div class="timeline-item reveal d3">
           <div class="timeline-dot dim"></div>
           <div class="timeline-date dim">2014 — 2017</div>
@@ -438,7 +443,6 @@
           <div class="timeline-sub">Amirkabir University of Technology, Iran</div>
           <p class="timeline-desc">Thesis: Nonlinear identification of excitation control systems (AVR) and re-tuning of Power System Stabilizer (PSS) parameters.</p>
         </div>
-
         <div class="timeline-item reveal d4">
           <div class="timeline-dot dim"></div>
           <div class="timeline-date dim">2009 — 2013</div>
@@ -446,7 +450,6 @@
           <div class="timeline-sub">Shiraz University, Iran</div>
           <p class="timeline-desc">Thesis: PID controller tuning using Fuzzy Logic — comparative analysis of tuning strategies.</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -464,7 +467,6 @@
         <button class="filter-btn" onclick="filterPubs('book',this)">Book Chapters</button>
       </div>
       <div class="pub-list">
-
         <div class="pub-item reveal" data-type="journal">
           <div class="pub-year">2025</div>
           <div class="pub-body">
@@ -474,7 +476,6 @@
             <div class="pub-badges"><span class="pb pb-j">Journal</span></div>
           </div>
         </div>
-
         <div class="pub-item reveal" data-type="journal">
           <div class="pub-year">2025</div>
           <div class="pub-body">
@@ -484,7 +485,6 @@
             <div class="pub-badges"><span class="pb pb-j">Journal</span><span class="pb pb-r">Under Review</span></div>
           </div>
         </div>
-
         <div class="pub-item reveal" data-type="journal">
           <div class="pub-year">2024</div>
           <div class="pub-body">
@@ -494,7 +494,6 @@
             <div class="pub-badges"><span class="pb pb-j">Journal</span></div>
           </div>
         </div>
-
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2026</div>
           <div class="pub-body">
@@ -504,7 +503,6 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span><span class="pb pb-s">Submitted</span></div>
           </div>
         </div>
-
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2026</div>
           <div class="pub-body">
@@ -514,7 +512,6 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span><span class="pb pb-s">Submitted</span></div>
           </div>
         </div>
-
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2025</div>
           <div class="pub-body">
@@ -524,7 +521,6 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span></div>
           </div>
         </div>
-
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2024</div>
           <div class="pub-body">
@@ -534,7 +530,6 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span><span class="pb pb-a">🏆 IFAC Young Author Award — 1st Place</span></div>
           </div>
         </div>
-
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2024</div>
           <div class="pub-body">
@@ -544,7 +539,6 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span></div>
           </div>
         </div>
-
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2023</div>
           <div class="pub-body">
@@ -554,7 +548,6 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span></div>
           </div>
         </div>
-
         <div class="pub-item reveal" data-type="book">
           <div class="pub-year">2024</div>
           <div class="pub-body">
@@ -564,7 +557,6 @@
             <div class="pub-badges"><span class="pb pb-b">Book Chapter</span></div>
           </div>
         </div>
-
       </div>
       <div style="text-align:center; margin-top:2.5rem;" class="reveal">
         <a href="https://scholar.google.com/citations?user=edrBuFUAAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-outline">
@@ -681,10 +673,6 @@
           <a class="contact-link" href="https://www.trafficfluid.tuc.gr/en/people/phd-students/dabestani" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>TUC Profile
           </a>
-          <!-- ★ Add LinkedIn when ready:
-          <a class="contact-link" href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
-          </a> -->
         </div>
       </div>
     </div>
@@ -696,13 +684,11 @@
     function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
     function closeMenu()  { document.getElementById('navLinks').classList.remove('open'); }
 
-    // Scroll reveal
     const ro = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.07 });
     document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-    // Active nav
     const secs = document.querySelectorAll('section[id]');
     const nls  = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
@@ -711,7 +697,6 @@
       nls.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
     }, { passive: true });
 
-    // Publication filter
     function filterPubs(type, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
