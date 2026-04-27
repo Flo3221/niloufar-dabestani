@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Niloufar Dabestani — Postdoctoral Researcher, NTUA</title>
+  <meta name="description" content="Dr. Niloufar Dabestani — Postdoctoral Researcher at NTUA Railways & Transport Lab. PhD TUC. Expert in optimal control, lane-free traffic, autonomous vehicles, multimodal mobility." />
+  <meta name="keywords" content="Niloufar Dabestani, optimal control, lane-free traffic, autonomous vehicles, postdoc, NTUA, TUC, periASTY" />
+  <meta property="og:title" content="Dr. Niloufar Dabestani" />
+  <meta property="og:description" content="Postdoctoral Researcher at NTUA Railways & Transport Lab. Intelligent Transportation Systems." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ════════════════════════════════════════════════════════════
+       COLOR TOKENS — change theme here in one place
+       ════════════════════════════════════════════════════════════
+
+       CURRENT ── Deep Navy + Teal (tech, precise, elegant)
+         --navy: #0b1526   --teal: #2dd4bf
+
+       OPTION A ── Midnight + Violet (creative, academic)
+         --navy: #0d0b1e   --navy-mid: #150f30   --navy-light: #1f1550
+         --teal: #a78bfa   --teal-dim: #7c5fd1   --teal-pale: rgba(167,139,250,.12)
+         --border: rgba(167,139,250,.18)
+
+       OPTION B ── Charcoal + Emerald (calm, nature)
+         --navy: #0d1810   --navy-mid: #111f14   --navy-light: #182c1c
+         --teal: #34d399   --teal-dim: #1a9b6b   --teal-pale: rgba(52,211,153,.12)
+         --border: rgba(52,211,153,.18)
+
+       OPTION C ── Warm Dark + Amber (bold, warm)
+         --navy: #1a1208   --navy-mid: #231908   --navy-light: #2e2210
+         --teal: #fbbf24   --teal-dim: #d97706   --teal-pale: rgba(251,191,36,.12)
+         --border: rgba(251,191,36,.18)
+
+       OPTION D ── Slate + Sky Blue (classic academic)
+         --navy: #0b1320   --navy-mid: #101c2e   --navy-light: #162742
+         --teal: #60a5fa   --teal-dim: #3b82f6   --teal-pale: rgba(96,165,250,.12)
+         --border: rgba(96,165,250,.18)
+
+       OPTION E ── Pure Black + Coral (editorial, bold)
+         --navy: #0f0d0d   --navy-mid: #181515   --navy-light: #211d1d
+         --teal: #fb7185   --teal-dim: #e11d48   --teal-pale: rgba(251,113,133,.12)
+         --border: rgba(251,113,133,.18)
+       ════════════════════════════════════════════════════════════ */
+
+    :root {
+      --navy:       #0b1526;
+      --navy-mid:   #111e35;
+      --navy-light: #192d4d;
+      --teal:       #2dd4bf;
+      --teal-dim:   #1a9b8a;
+      --teal-pale:  rgba(45,212,191,.12);
+      --white:      #f4f8ff;
+      --gray-300:   #8fa8c8;
+      --gray-500:   #4a6180;
+      --text:       #dce8f8;
+      --text-muted: #7a9cbf;
+      --card-bg:    rgba(25,45,77,.55);
+      --border:     rgba(45,212,191,.18);
+      --radius-md:  12px;
+      --radius-lg:  20px;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'Sora', system-ui, sans-serif;
+      --gap: 6rem;
+      --max-w: 1100px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--navy); color: var(--text); font-family: var(--font-sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: var(--teal); text-decoration: none; transition: opacity .2s; }
+    a:hover { opacity: .72; }
+    ::selection { background: var(--teal); color: var(--navy); }
+
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.032'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1rem 2.5rem; display: flex; align-items: center; justify-content: space-between;
+      backdrop-filter: blur(20px) saturate(1.5);
+      background: rgba(11,21,38,.85); border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--white); letter-spacing: .03em; }
+    .nav-brand span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .78rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--gray-300); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); opacity: 1; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--teal); margin: 5px 0; }
+
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 2.5rem 5rem; position: relative; overflow: hidden; }
+    #hero::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black 25%, transparent 100%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-glow { position: absolute; top: -5%; right: -10%; width: 60vw; max-width: 750px; aspect-ratio: 1; background: radial-gradient(ellipse at center, rgba(45,212,191,.1) 0%, transparent 65%); pointer-events: none; z-index: 0; animation: glowPulse 9s ease-in-out infinite alternate; }
+    .hero-glow2 { position: absolute; bottom: 5%; left: -10%; width: 40vw; max-width: 500px; aspect-ratio: 1; background: radial-gradient(ellipse at center, rgba(45,212,191,.05) 0%, transparent 70%); pointer-events: none; z-index: 0; animation: glowPulse 12s ease-in-out 2s infinite alternate; }
+    @keyframes glowPulse { from { transform: scale(1); } to { transform: scale(1.1) translateY(-3%); } }
+
+    .hero-inner { max-width: var(--max-w); width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; align-items: center; gap: 5rem; position: relative; z-index: 1; }
+
+    .hero-eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.1rem; display: flex; align-items: center; gap: .8rem; opacity: 0; animation: fadeUp .8s .2s ease forwards; }
+    .hero-eyebrow::before { content: ''; display: block; width: 30px; height: 1.5px; background: var(--teal); }
+
+    h1 { font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.06; color: var(--white); letter-spacing: -.01em; margin-bottom: 1.1rem; opacity: 0; animation: fadeUp .8s .35s ease forwards; }
+    h1 em { font-style: italic; color: var(--teal); }
+
+    .hero-position { display: inline-flex; align-items: center; gap: .6rem; font-size: .84rem; font-weight: 500; color: var(--teal); background: var(--teal-pale); border: 1px solid var(--border); padding: .45rem 1rem; border-radius: 50px; margin-bottom: 1.3rem; opacity: 0; animation: fadeUp .8s .45s ease forwards; }
+    .hero-position::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 0 rgba(45,212,191,.5); animation: ping 1.8s ease-in-out infinite; }
+    @keyframes ping { 0%,100% { box-shadow: 0 0 0 0 rgba(45,212,191,.5); } 50% { box-shadow: 0 0 0 6px rgba(45,212,191,0); } }
+
+    .hero-subtitle { font-size: 1rem; color: var(--gray-300); max-width: 510px; margin-bottom: 2rem; line-height: 1.7; opacity: 0; animation: fadeUp .8s .55s ease forwards; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: .55rem; margin-bottom: 2.5rem; opacity: 0; animation: fadeUp .8s .65s ease forwards; }
+    .tag { font-size: .74rem; font-weight: 500; letter-spacing: .05em; padding: .32rem .8rem; border-radius: 50px; border: 1px solid var(--border); color: var(--teal); background: var(--teal-pale); transition: background .2s, transform .2s; }
+    .tag:hover { background: rgba(45,212,191,.22); transform: translateY(-2px); }
+
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .8s .75s ease forwards; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .72rem 1.8rem; border-radius: 50px; font-size: .87rem; font-weight: 600; transition: all .25s; cursor: pointer; border: none; font-family: var(--font-sans); }
+    .btn-primary { background: var(--teal); color: var(--navy); }
+    .btn-primary:hover { background: var(--white); color: var(--navy); opacity: 1; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(45,212,191,.25); }
+    .btn-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--border); }
+    .btn-outline:hover { background: var(--teal-pale); opacity: 1; transform: translateY(-2px); }
+
+    /* Photo */
+    .hero-photo-wrap { position: relative; opacity: 0; animation: fadeIn 1s .5s ease forwards; }
+    .photo-ring { position: absolute; inset: -14px; border-radius: var(--radius-lg); border: 1px solid var(--border); animation: ringRotate 20s linear infinite; }
+    .photo-ring-2 { position: absolute; inset: -26px; border-radius: 28px; border: 1px dashed rgba(45,212,191,.1); }
+    @keyframes ringRotate { 0% { clip-path: polygon(0 0,100% 0,100% 3%,0 3%); } 25% { clip-path: polygon(97% 0,100% 0,100% 100%,97% 100%); } 50% { clip-path: polygon(0 97%,100% 97%,100% 100%,0 100%); } 75% { clip-path: polygon(0 0,3% 0,3% 100%,0 100%); } 100% { clip-path: polygon(0 0,100% 0,100% 3%,0 3%); } }
+    .hero-photo { width: 100%; border-radius: var(--radius-lg); object-fit: cover; aspect-ratio: 3/4; border: 2px solid var(--navy-light); box-shadow: 0 0 80px rgba(45,212,191,.12); background: var(--navy-light); }
+    .hero-badge { position: absolute; bottom: -12px; left: -16px; background: var(--navy-mid); border: 1px solid var(--border); border-radius: var(--radius-md); padding: .7rem 1rem; backdrop-filter: blur(12px); font-size: .78rem; }
+    .hero-badge strong { color: var(--teal); display: block; font-size: 1.1rem; font-family: var(--font-serif); font-weight: 400; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* SECTIONS */
+    section { padding: var(--gap) 2.5rem; position: relative; z-index: 1; }
+    .container { max-width: var(--max-w); margin: 0 auto; }
+    .section-label { font-size: .72rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); margin-bottom: .8rem; display: flex; align-items: center; gap: .6rem; }
+    .section-label::before { content: '//'; color: var(--teal-dim); font-size: .8em; }
+    h2 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.12; color: var(--white); margin-bottom: .9rem; }
+    h2 span { color: var(--teal); font-style: italic; }
+    .divider { width: 44px; height: 1.5px; background: linear-gradient(90deg, var(--teal), transparent); margin-bottom: 3rem; }
+    p { color: var(--text-muted); line-height: 1.75; }
+
+    /* ABOUT */
+    #about { background: var(--navy-mid); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { margin-bottom: 1.2rem; font-size: .96rem; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--white); font-weight: 500; }
+    .info-block { padding: 1.4rem 1.6rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); backdrop-filter: blur(8px); margin-bottom: 1.3rem; }
+    .info-block:last-child { margin-bottom: 0; }
+    .info-block h3 { font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .info-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .42rem 0; border-bottom: 1px solid rgba(45,212,191,.07); font-size: .88rem; }
+    .info-row:last-child { border-bottom: none; }
+    .info-key { color: var(--text-muted); flex-shrink: 0; font-size: .85rem; }
+    .info-val { color: var(--white); text-align: right; font-weight: 400; }
+
+    /* RESEARCH */
+    .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.4rem; }
+    .research-card { padding: 1.8rem 1.6rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); backdrop-filter: blur(8px); transition: transform .25s, border-color .25s, box-shadow .25s; position: relative; overflow: hidden; }
+    .research-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--teal), transparent); opacity: 0; transition: opacity .3s; }
+    .research-card:hover { transform: translateY(-6px); border-color: var(--teal-dim); box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+    .research-card:hover::before { opacity: 1; }
+    .research-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .research-card h3 { font-size: 1.05rem; font-weight: 500; color: var(--white); margin-bottom: .5rem; }
+    .research-card p { font-size: .86rem; }
+
+    /* TIMELINE */
+    #experience { background: var(--navy-mid); }
+    .timeline { position: relative; padding-left: 2.5rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 1px; background: linear-gradient(to bottom, var(--teal), var(--border), transparent); }
+    .timeline-item { position: relative; margin-bottom: 2.8rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot { position: absolute; left: -2.5rem; width: 11px; height: 11px; border-radius: 50%; background: var(--teal); border: 2px solid var(--navy); top: 7px; box-shadow: 0 0 14px var(--teal); }
+    .timeline-dot.dim { background: var(--gray-500); box-shadow: none; }
+    .timeline-date { font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); margin-bottom: .35rem; }
+    .timeline-date.dim { color: var(--text-muted); }
+    .timeline-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--white); margin-bottom: .18rem; }
+    .timeline-sub { font-size: .88rem; color: var(--gray-300); margin-bottom: .55rem; }
+    .timeline-desc { font-size: .86rem; color: var(--text-muted); max-width: 600px; }
+    .timeline-bullets { margin-top: .5rem; padding-left: 1.2rem; }
+    .timeline-bullets li { font-size: .85rem; color: var(--text-muted); margin-bottom: .3rem; line-height: 1.55; }
+    .timeline-bullets li::marker { color: var(--teal); }
+
+    /* PUBLICATIONS */
+    .pub-filters { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .filter-btn { font-size: .78rem; font-weight: 500; padding: .38rem 1rem; border-radius: 50px; border: 1px solid var(--border); background: transparent; color: var(--gray-300); cursor: pointer; transition: all .2s; font-family: var(--font-sans); }
+    .filter-btn.active, .filter-btn:hover { background: var(--teal-pale); color: var(--teal); border-color: var(--teal-dim); }
+    .pub-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .pub-item { padding: 1.4rem 1.7rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); backdrop-filter: blur(8px); transition: border-color .25s, transform .22s; display: flex; gap: 1.4rem; align-items: flex-start; }
+    .pub-item:hover { border-color: var(--teal-dim); transform: translateX(4px); }
+    .pub-year { flex-shrink: 0; font-size: .73rem; font-weight: 700; padding: .22rem .65rem; border-radius: 4px; background: var(--teal-pale); color: var(--teal); border: 1px solid var(--border); margin-top: 2px; }
+    .pub-body { flex: 1; }
+    .pub-title { font-size: .95rem; font-weight: 500; color: var(--white); line-height: 1.45; margin-bottom: .38rem; }
+    .pub-authors { font-size: .81rem; color: var(--text-muted); margin-bottom: .28rem; }
+    .pub-authors strong { color: var(--teal); font-weight: 500; }
+    .pub-venue { font-size: .8rem; color: var(--gray-500); font-style: italic; }
+    .pub-badges { display: flex; gap: .45rem; margin-top: .55rem; flex-wrap: wrap; }
+    .pb { font-size: .68rem; font-weight: 600; padding: .14rem .58rem; border-radius: 4px; letter-spacing: .05em; }
+    .pb-j { background: rgba(45,212,191,.15); color: var(--teal); }
+    .pb-c { background: rgba(96,165,250,.15); color: #7ab8f5; }
+    .pb-b { background: rgba(251,191,36,.15); color: #f5c570; }
+    .pb-a { background: rgba(212,83,126,.15); color: #f5a0c0; }
+    .pb-r { background: rgba(99,153,34,.15); color: #a6d65a; }
+    .pb-s { background: rgba(148,163,184,.12); color: #94a3b8; }
+
+    /* AWARDS */
+    #awards { background: var(--navy-mid); }
+    .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; }
+    .award-card { padding: 1.8rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); backdrop-filter: blur(8px); display: flex; gap: 1.1rem; align-items: flex-start; transition: transform .25s, border-color .25s; }
+    .award-card:hover { transform: translateY(-4px); border-color: var(--teal-dim); }
+    .award-icon { width: 42px; height: 42px; flex-shrink: 0; border-radius: 10px; background: var(--teal-pale); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .award-card h3 { font-size: .97rem; font-weight: 500; color: var(--white); margin-bottom: .28rem; line-height: 1.35; }
+    .award-card p { font-size: .83rem; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.1rem; }
+    .skill-group { padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); }
+    .skill-group h3 { font-size: .68rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .skill-tag { font-size: .79rem; padding: .26rem .68rem; border-radius: 4px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); color: var(--gray-300); }
+
+    /* CONTACT */
+    #contact { text-align: center; }
+    .contact-card { max-width: 640px; margin: 0 auto; padding: 3.5rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); backdrop-filter: blur(14px); }
+    .contact-card h2 { margin-bottom: .8rem; }
+    .contact-card > p { font-size: .97rem; margin-bottom: 2rem; }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .contact-link { display: flex; align-items: center; gap: .5rem; padding: .68rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--border); font-size: .86rem; font-weight: 500; color: var(--gray-300); transition: all .22s; }
+    .contact-link:hover { color: var(--teal); border-color: var(--teal-dim); background: var(--teal-pale); opacity: 1; }
+    .contact-link svg { width: 15px; height: 15px; fill: currentColor; flex-shrink: 0; }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: .8rem; color: var(--gray-500); }
+
+    /* SCROLL ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 920px) { .hero-inner { grid-template-columns: 1fr; gap: 3rem; } .hero-photo-wrap { width: 240px; margin: 0 auto; } .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    @media (max-width: 640px) {
+      :root { --gap: 4rem; }
+      section { padding: var(--gap) 1.4rem; }
+      nav { padding: .9rem 1.3rem; }
+      .nav-links { display: none; flex-direction: column; gap: 1.5rem; position: fixed; inset: 0; background: rgba(11,21,38,.97); align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity .3s; }
+      .nav-links.open { display: flex; pointer-events: all; opacity: 1; z-index: 99; }
+      .nav-links.open a { font-size: 1.1rem; }
+      .nav-toggle { display: block; z-index: 101; }
+      .contact-card { padding: 2rem 1.3rem; }
+      .hero-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-brand">Dr. N.<span>Dabestani</span></span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about"        onclick="closeMenu()">About</a></li>
+      <li><a href="#research"     onclick="closeMenu()">Research</a></li>
+      <li><a href="#experience"   onclick="closeMenu()">Experience</a></li>
+      <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
+      <li><a href="#awards"       onclick="closeMenu()">Awards</a></li>
+      <li><a href="#contact"      onclick="closeMenu()">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow">Researcher · Engineer · Innovator</p>
+        <h1>Dr. Niloufar<br><em>Dabestani</em></h1>
+        <div class="hero-position">Postdoctoral Researcher · NTUA, Athens</div>
+        <p class="hero-subtitle">
+          Based at the <strong style="color:var(--white)">Railways &amp; Transport Laboratory,
+          National Technical University of Athens</strong>.
+          PhD from the Technical University of Crete. Specializing in optimal control,
+          autonomous mobility, and sustainable urban transportation.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">Optimal Control</span>
+          <span class="tag">Lane-Free Traffic</span>
+          <span class="tag">Autonomous Vehicles</span>
+          <span class="tag">Model Predictive Control</span>
+          <span class="tag">Demand-Responsive Transport</span>
+          <span class="tag">EU Horizon Research</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#publications" class="btn btn-primary">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Publications
+          </a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
+          <!-- ★ Uncomment to add CV download:
+          <a href="assets/CV_Niloufar_Dabestani.pdf" download class="btn btn-outline">Download CV</a> -->
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="photo-ring-2"></div>
+        <div class="photo-ring"></div>
+        <!-- ★ Add your photo at assets/photo.jpg (portrait, min 560px wide) -->
+        <img class="hero-photo" src="assets/photo.jpg" alt="Dr. Niloufar Dabestani"
+             onerror="this.style.background='var(--navy-light)'; this.removeAttribute('alt');" />
+        <div class="hero-badge">
+          <strong>🏆 1st</strong>IFAC Young Author Award 2024
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label reveal">About Me</p>
+      <h2 class="reveal">A <span>driven mind</span> at the<br>intersection of control &amp; mobility</h2>
+      <div class="divider reveal"></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="reveal">I am <strong>Dr. Niloufar Dabestani</strong>, a Postdoctoral Researcher at the <strong>Railways &amp; Transport Laboratory, National Technical University of Athens (NTUA)</strong>, working on demand-responsive transport systems, multimodal mobility, and sustainable urban transportation.</p>
+          <p class="reveal d1">I serve as <strong>Technical Coordinator</strong> of the EU Horizon project <strong>periASTY</strong> — responsible for research alignment, deliverables, milestone monitoring, and consortium coordination, addressing mobility, energy, industrial, and governance innovations for peri-urban decarbonization.</p>
+          <p class="reveal d2">My <strong>PhD</strong> (2022–2025) was completed at the Dynamic Systems &amp; Simulation Laboratory (DSSL), Technical University of Crete, under the supervision of Prof. Ioannis Papamichail and Prof. Markos Papageorgiou, within the <strong>TrafficFluid</strong> ERC Advanced Grant (Horizon 2020, no. 833915).</p>
+          <p class="reveal d3">I supervise PhD and master's students, contribute to EU Horizon proposals, and serve as peer reviewer for top international journals and conferences.</p>
+        </div>
+        <div class="reveal d1">
+          <div class="info-block">
+            <h3>Current Position</h3>
+            <div class="info-row"><span class="info-key">Role</span><span class="info-val">Postdoctoral Researcher</span></div>
+            <div class="info-row"><span class="info-key">Lab</span><span class="info-val">Railways &amp; Transport Lab</span></div>
+            <div class="info-row"><span class="info-key">Institution</span><span class="info-val">NTUA, Athens</span></div>
+            <div class="info-row"><span class="info-key">Since</span><span class="info-val">December 2025</span></div>
+            <div class="info-row"><span class="info-key">Email</span><span class="info-val"><a href="mailto:ndabestani@civil.ntua.gr">ndabestani@civil.ntua.gr</a></span></div>
+          </div>
+          <div class="info-block">
+            <h3>Peer Review Service</h3>
+            <div class="info-row"><span class="info-key">IEEE T-ITS</span><span class="info-val" style="color:var(--teal)">Reviewer</span></div>
+            <div class="info-row"><span class="info-key">TRC · TRR</span><span class="info-val" style="color:var(--teal)">Reviewer</span></div>
+            <div class="info-row"><span class="info-key">IEEE ITSC · IV</span><span class="info-val" style="color:var(--teal)">Reviewer</span></div>
+            <div class="info-row"><span class="info-key">ECC · TRB</span><span class="info-val" style="color:var(--teal)">Reviewer</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="container">
+      <p class="section-label reveal">Focus Areas</p>
+      <h2 class="reveal">What I <span>work on</span></h2>
+      <div class="divider reveal"></div>
+      <div class="research-grid">
+        <div class="research-card reveal">
+          <div class="research-icon">🚗</div>
+          <h3>Lane-Free Traffic</h3>
+          <p>Control strategies for autonomous vehicles operating without predefined lanes — maximizing road capacity in next-generation urban environments.</p>
+        </div>
+        <div class="research-card reveal d1">
+          <div class="research-icon">🎯</div>
+          <h3>Optimal Control</h3>
+          <p>Trajectory and path planning algorithms using variational methods, nonlinear programming, and model predictive control for multi-vehicle coordination.</p>
+        </div>
+        <div class="research-card reveal d2">
+          <div class="research-icon">🚌</div>
+          <h3>Demand-Responsive Transport</h3>
+          <p>Fleet sizing, routing, and scheduling for flexible on-demand mobility systems — including modular electric vehicles and opportunity charging.</p>
+        </div>
+        <div class="research-card reveal d3">
+          <div class="research-icon">🌍</div>
+          <h3>Sustainable Mobility</h3>
+          <p>EU Horizon research on peri-urban decarbonization, multimodal mobility integration, and climate-neutral transportation governance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION -->
+  <section id="experience">
+    <div class="container">
+      <p class="section-label reveal">Background</p>
+      <h2 class="reveal">Education &amp; <span>Experience</span></h2>
+      <div class="divider reveal"></div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">December 2025 — Present</div>
+          <div class="timeline-title">Postdoctoral Researcher</div>
+          <div class="timeline-sub">Railways &amp; Transport Laboratory · National Technical University of Athens, Greece</div>
+          <ul class="timeline-bullets">
+            <li>Technical coordinator of the EU Horizon <strong style="color:var(--white)">periASTY</strong> project — research alignment, deliverables, milestone monitoring, consortium coordination.</li>
+            <li>Research in demand-responsive transport, multimodal mobility, and fleet optimization.</li>
+            <li>Contribution to EU Horizon research proposals.</li>
+            <li>Supervision of PhD and master's students in transport systems modelling.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item reveal d1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">January 2022 — November 2025</div>
+          <div class="timeline-title">PhD, Production Engineering &amp; Management</div>
+          <div class="timeline-sub">Dynamic Systems &amp; Simulation Lab (DSSL) · Technical University of Crete, Greece</div>
+          <p class="timeline-desc">Dissertation: <em>Optimal Control Strategies for Lane-free Vehicular Traffic</em>.<br>
+          Advisors: Prof. Ioannis Papamichail &amp; Prof. Markos Papageorgiou.<br>
+          Research associate — TrafficFluid ERC Advanced Grant (Horizon 2020, no. 833915).</p>
+        </div>
+
+        <div class="timeline-item reveal d2">
+          <div class="timeline-dot dim"></div>
+          <div class="timeline-date dim">2019 — 2021</div>
+          <div class="timeline-title">Low Voltage Systems Designer</div>
+          <div class="timeline-sub">Kharazm Power Engineering Group, Iran</div>
+          <p class="timeline-desc">Design of electrical substations for large-scale industrial infrastructure.</p>
+        </div>
+
+        <div class="timeline-item reveal d3">
+          <div class="timeline-dot dim"></div>
+          <div class="timeline-date dim">2014 — 2017</div>
+          <div class="timeline-title">MSc, Electrical Engineering — Instrumentation</div>
+          <div class="timeline-sub">Amirkabir University of Technology, Iran</div>
+          <p class="timeline-desc">Thesis: Nonlinear identification of excitation control systems (AVR) and re-tuning of Power System Stabilizer (PSS) parameters.</p>
+        </div>
+
+        <div class="timeline-item reveal d4">
+          <div class="timeline-dot dim"></div>
+          <div class="timeline-date dim">2009 — 2013</div>
+          <div class="timeline-title">BSc, Electrical Engineering — Control</div>
+          <div class="timeline-sub">Shiraz University, Iran</div>
+          <p class="timeline-desc">Thesis: PID controller tuning using Fuzzy Logic — comparative analysis of tuning strategies.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="container">
+      <p class="section-label reveal">Selected Works</p>
+      <h2 class="reveal">Publications &amp; <span>Research Output</span></h2>
+      <div class="divider reveal"></div>
+      <div class="pub-filters reveal">
+        <button class="filter-btn active" onclick="filterPubs('all',this)">All</button>
+        <button class="filter-btn" onclick="filterPubs('journal',this)">Journals</button>
+        <button class="filter-btn" onclick="filterPubs('conference',this)">Conferences</button>
+        <button class="filter-btn" onclick="filterPubs('book',this)">Book Chapters</button>
+      </div>
+      <div class="pub-list">
+
+        <div class="pub-item reveal" data-type="journal">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <div class="pub-title">Distributed model predictive control of automated vehicle entities in lane-free traffic involving human driven vehicles</div>
+            <div class="pub-authors"><strong>N. Dabestani</strong>, D. Troullinos, I. Papamichail, M. Naderi, M. Papageorgiou</div>
+            <div class="pub-venue">Control Engineering Practice, vol. 165, p. 106586, 2025</div>
+            <div class="pub-badges"><span class="pb pb-j">Journal</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item reveal" data-type="journal">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <div class="pub-title">Lane-free signal-free intersections involving automated vehicles, platoons, bicycles, and pedestrians</div>
+            <div class="pub-authors">M. Naderi, I. Chrysomallis, D. Troullinos, <strong>N. Dabestani</strong>, M. Papageorgiou</div>
+            <div class="pub-venue">IEEE Transactions on Intelligent Transportation Systems — under review</div>
+            <div class="pub-badges"><span class="pb pb-j">Journal</span><span class="pb pb-r">Under Review</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item reveal" data-type="journal">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <div class="pub-title">Joint path planning for multiple automated vehicles in lane-free traffic with vehicle nudging</div>
+            <div class="pub-authors"><strong>N. Dabestani</strong>, P. Typaldos, V. K. Yanumula, I. Papamichail, M. Papageorgiou</div>
+            <div class="pub-venue">IEEE Transactions on Intelligent Transportation Systems, vol. 25, no. 11, pp. 18525–18536</div>
+            <div class="pub-badges"><span class="pb pb-j">Journal</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item reveal" data-type="conference">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <div class="pub-title">Joint optimization of all vehicle trajectories at a highway weaving area in lane-free traffic</div>
+            <div class="pub-authors"><strong>N. Dabestani</strong>, I. Papamichail, M. Papageorgiou, K. Gkiotsalitis</div>
+            <div class="pub-venue">2026 IEEE ITSC, Naples, Italy — submitted</div>
+            <div class="pub-badges"><span class="pb pb-c">Conference</span><span class="pb pb-s">Submitted</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item reveal" data-type="conference">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <div class="pub-title">Dial-a-ride with modular electric vehicles and opportunity charging</div>
+            <div class="pub-authors">M. Theofani, <strong>N. Dabestani</strong>, K. Gkiotsalitis</div>
+            <div class="pub-venue">hEART2026, Paris, France — submitted</div>
+            <div class="pub-badges"><span class="pb pb-c">Conference</span><span class="pb pb-s">Submitted</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item reveal" data-type="conference">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <div class="pub-title">Distributed model predictive control of automated vehicles, platoons and flocks in lane-free traffic</div>
+            <div class="pub-authors"><strong>N. Dabestani</strong>, D. Troullinos, I. Papamichail, M. Papageorgiou</div>
+            <div class="pub-venue">2025 European Control Conference (ECC), Thessaloniki, Greece, pp. 2609–2616</div>
+            <div class="pub-badges"><span class="pb pb-c">Conference</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item reveal" data-type="conference">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <div class="pub-title">Joint vehicle path planning for interruptible 1-D snake-like platoons and 2D flocks in lane-free traffic</div>
+            <div class="pub-authors"><strong>N. Dabestani</strong>, P. Typaldos, I. Papamichail, M. Papageorgiou</div>
+            <div class="pub-venue">IFAC-PapersOnLine, vol. 58, Issue 10, pp. 61–68 · IFAC CTS 2024, Ayia Napa, Cyprus</div>
+            <div class="pub-badges"><span class="pb pb-c">Conference</span><span class="pb pb-a">🏆 IFAC Young Author Award — 1st Place</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item reveal" data-type="conference">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <div class="pub-title">Joint optimal control of CAV platoons crossing lane-free signal-free intersections</div>
+            <div class="pub-authors">M. Naderi, <strong>N. Dabestani</strong>, M. Papageorgiou</div>
+            <div class="pub-venue">2024 IEEE 27th ITSC, Edmonton, Canada, pp. 2922–2929</div>
+            <div class="pub-badges"><span class="pb pb-c">Conference</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item reveal" data-type="conference">
+          <div class="pub-year">2023</div>
+          <div class="pub-body">
+            <div class="pub-title">Joint trajectory optimization for multiple automated vehicles in lane-free traffic with vehicle nudging</div>
+            <div class="pub-authors"><strong>N. Dabestani</strong>, P. Typaldos, V. K. Yanumula, I. Papamichail, M. Papageorgiou</div>
+            <div class="pub-venue">2023 IEEE 26th ITSC, Bilbao, Spain, pp. 5954–5961</div>
+            <div class="pub-badges"><span class="pb pb-c">Conference</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item reveal" data-type="book">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <div class="pub-title">Highlights of lane-free automated vehicle traffic with nudging</div>
+            <div class="pub-authors">M. Papageorgiou, P. Typaldos, D. Theodosis, G. Chalkiadakis, <strong>N. Dabestani</strong>, et al.</div>
+            <div class="pub-venue">Transportation Mobility in Smart Cities, Springer Tracts on Transportation and Traffic, vol. 21, pp. 147–183</div>
+            <div class="pub-badges"><span class="pb pb-b">Book Chapter</span></div>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;" class="reveal">
+        <a href="https://scholar.google.com/citations?user=edrBuFUAAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-outline">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          View all on Google Scholar
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <div class="container">
+      <p class="section-label reveal">Recognition</p>
+      <h2 class="reveal">Honors &amp; <span>Awards</span></h2>
+      <div class="divider reveal"></div>
+      <div class="awards-grid">
+        <div class="award-card reveal">
+          <div class="award-icon">🥇</div>
+          <div>
+            <h3>IFAC Young Author Award — 1st Place</h3>
+            <p>IFAC CTS 2024 Conference, Ayia Napa, Cyprus — July 2024. Awarded for joint vehicle path planning research in lane-free traffic.</p>
+          </div>
+        </div>
+        <div class="award-card reveal d1">
+          <div class="award-icon">🥉</div>
+          <div>
+            <h3>3rd Place — IEEE ITSS Young Professionals Symposium</h3>
+            <p>Oral presentation award, IEEE ITSS Young Professionals Travelling Fellowship Symposium, Chania, Greece — November 2022.</p>
+          </div>
+        </div>
+        <div class="award-card reveal d2">
+          <div class="award-icon">🇪🇺</div>
+          <div>
+            <h3>ERC TrafficFluid — Horizon 2020</h3>
+            <p>Research associate in the TrafficFluid ERC Advanced Grant project (Grant no. 833915) — one of Europe's most competitive grants.</p>
+          </div>
+        </div>
+        <div class="award-card reveal d3">
+          <div class="award-icon">🪑</div>
+          <div>
+            <h3>Session Co-Chair</h3>
+            <p>Session Co-Chair at the IFAC CTS Conference, Ayia Napa, Cyprus — July 2024.</p>
+          </div>
+        </div>
+        <div class="award-card reveal d4">
+          <div class="award-icon">⭐</div>
+          <div>
+            <h3>NODET — Iranian Gifted Schools</h3>
+            <p>Admitted to the National Organization for Development of Exceptional Talents (acceptance rate below 1%).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <p class="section-label reveal">Competencies</p>
+      <h2 class="reveal">Skills &amp; <span>Tools</span></h2>
+      <div class="divider reveal"></div>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3>Programming</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">MATLAB</span><span class="skill-tag">Simulink</span>
+            <span class="skill-tag">Python</span><span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span><span class="skill-tag">LaTeX</span>
+          </div>
+        </div>
+        <div class="skill-group reveal d1">
+          <h3>Simulation &amp; Design</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">SUMO</span><span class="skill-tag">AutoCAD</span>
+            <span class="skill-tag">DIALux</span><span class="skill-tag">Digsilent</span>
+          </div>
+        </div>
+        <div class="skill-group reveal d2">
+          <h3>Research Methods</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Optimal Control</span><span class="skill-tag">MPC</span>
+            <span class="skill-tag">Path Planning</span><span class="skill-tag">Fleet Optimization</span>
+          </div>
+        </div>
+        <div class="skill-group reveal d3">
+          <h3>Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Persian (Native)</span>
+            <span class="skill-tag">English (Fluent)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card reveal">
+        <p class="section-label" style="justify-content:center; margin-bottom:.8rem;">Let's Connect</p>
+        <h2>Get in <span>touch</span></h2>
+        <p>Always happy to discuss research collaborations, EU projects, or the future of autonomous and sustainable mobility.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:ndabestani@civil.ntua.gr">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Email (NTUA)
+          </a>
+          <a class="contact-link" href="mailto:ndabestani@tuc.gr">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Email (TUC)
+          </a>
+          <a class="contact-link" href="https://scholar.google.com/citations?user=edrBuFUAAAAJ&hl=en" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17h2v-4.82L9 13.36V17h2v-4l1-.54 1 .54V17h2v-3.82l4-2.18V11h-2v3.18L12 16 3 11.18V9l9-5 9 5v2h-2V9l-8 4.47V17h2v-3.18l2-1.09L12 3z"/></svg>Google Scholar
+          </a>
+          <a class="contact-link" href="https://www.trafficfluid.tuc.gr/en/people/phd-students/dabestani" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>TUC Profile
+          </a>
+          <!-- ★ Add LinkedIn when ready:
+          <a class="contact-link" href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>© 2026 Niloufar Dabestani</p></footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+    function closeMenu()  { document.getElementById('navLinks').classList.remove('open'); }
+
+    // Scroll reveal
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+    // Active nav
+    const secs = document.querySelectorAll('section[id]');
+    const nls  = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      secs.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
+      nls.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+    }, { passive: true });
+
+    // Publication filter
+    function filterPubs(type, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.pub-item').forEach(p => {
+        p.style.display = (type === 'all' || p.dataset.type === type) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
