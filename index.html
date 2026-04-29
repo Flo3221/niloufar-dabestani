@@ -120,17 +120,17 @@
     .btn-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--border); }
     .btn-outline:hover { background: var(--teal-pale); opacity: 1; transform: translateY(-2px); }
 
-    /* ★ PHOTO — key rules */
+    /* PHOTO */
     .hero-photo-wrap { position: relative; opacity: 0; animation: fadeIn 1s .5s ease forwards; }
     .photo-ring { position: absolute; inset: -14px; border-radius: var(--radius-lg); border: 1px solid var(--border); animation: ringRotate 20s linear infinite; }
     .photo-ring-2 { position: absolute; inset: -26px; border-radius: 28px; border: 1px dashed rgba(45,212,191,.1); }
     @keyframes ringRotate { 0% { clip-path: polygon(0 0,100% 0,100% 3%,0 3%); } 25% { clip-path: polygon(97% 0,100% 0,100% 100%,97% 100%); } 50% { clip-path: polygon(0 97%,100% 97%,100% 100%,0 100%); } 75% { clip-path: polygon(0 0,3% 0,3% 100%,0 100%); } 100% { clip-path: polygon(0 0,100% 0,100% 3%,0 3%); } }
     .hero-photo {
       width: 100%;
-      height: 400px;           /* fixed height so photo always fills the space */
+      height: 400px;
       border-radius: var(--radius-lg);
       object-fit: cover;
-      object-position: center top;  /* shows face, not chest */
+      object-position: center top;
       border: 2px solid var(--navy-light);
       box-shadow: 0 0 80px rgba(45,212,191,.12);
       display: block;
@@ -155,6 +155,7 @@
     .about-text p { margin-bottom: 1.2rem; font-size: .96rem; }
     .about-text p:last-child { margin-bottom: 0; }
     .about-text strong { color: var(--white); font-weight: 500; }
+    .about-text a { color: var(--teal); }
     .info-block { padding: 1.4rem 1.6rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); backdrop-filter: blur(8px); margin-bottom: 1.3rem; }
     .info-block:last-child { margin-bottom: 0; }
     .info-block h3 { font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
@@ -186,6 +187,7 @@
     .timeline-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--white); margin-bottom: .18rem; }
     .timeline-sub { font-size: .88rem; color: var(--gray-300); margin-bottom: .55rem; }
     .timeline-desc { font-size: .86rem; color: var(--text-muted); max-width: 600px; }
+    .timeline-desc a { color: var(--teal); }
     .timeline-bullets { margin-top: .5rem; padding-left: 1.2rem; }
     .timeline-bullets li { font-size: .85rem; color: var(--text-muted); margin-bottom: .3rem; line-height: 1.55; }
     .timeline-bullets li::marker { color: var(--teal); }
@@ -219,6 +221,8 @@
     .award-card:hover { transform: translateY(-4px); border-color: var(--teal-dim); }
     .award-icon { width: 42px; height: 42px; flex-shrink: 0; border-radius: 10px; background: var(--teal-pale); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
     .award-card h3 { font-size: .97rem; font-weight: 500; color: var(--white); margin-bottom: .28rem; line-height: 1.35; }
+    .award-card h3 a { color: var(--white); }
+    .award-card h3 a:hover { color: var(--teal); opacity: 1; }
     .award-card p { font-size: .83rem; }
 
     /* SKILLS */
@@ -293,12 +297,15 @@
         <p class="hero-eyebrow">Researcher · Engineer · Innovator</p>
         <h1>Dr. Niloufar<br><em>Dabestani</em></h1>
         <div class="hero-position">Postdoctoral Researcher · NTUA, Athens</div>
+
+        <!-- ★ CHANGE 1: removed "sustainable urban transportation" from subtitle -->
         <p class="hero-subtitle">
           Based at the <strong style="color:var(--white)">Railways &amp; Transport Laboratory,
           National Technical University of Athens</strong>.
           PhD from the Technical University of Crete. Specializing in optimal control,
-          autonomous mobility, and sustainable urban transportation.
+          autonomous mobility, and demand-responsive transport systems.
         </p>
+
         <div class="hero-tags">
           <span class="tag">Optimal Control</span>
           <span class="tag">Lane-Free Traffic</span>
@@ -317,11 +324,6 @@
       </div><!-- end left -->
 
       <!-- RIGHT: photo -->
-      <!--
-        ★ PHOTO SETUP:
-        Upload "photo.jpg" to the ROOT of your GitHub repo (same level as index.html).
-        The src below is already set to "photo.jpg" — no subfolders needed.
-      -->
       <div class="hero-photo-wrap">
         <div class="photo-ring-2"></div>
         <div class="photo-ring"></div>
@@ -331,10 +333,10 @@
           alt="Dr. Niloufar Dabestani"
           onerror="this.style.opacity='0'"
         />
-      </div><!-- end right / hero-photo-wrap -->
+      </div><!-- end hero-photo-wrap -->
 
     </div><!-- end hero-inner -->
-  </section><!-- end hero -->
+  </section>
 
   <!-- ABOUT -->
   <section id="about">
@@ -343,12 +345,18 @@
       <h2 class="reveal">A <span>driven mind</span> at the<br>intersection of control &amp; mobility</h2>
       <div class="divider reveal"></div>
       <div class="about-grid">
+
+        <!-- ★ CHANGE 2: replaced with Niloufar's own paragraph, split into readable blocks -->
         <div class="about-text">
-          <p class="reveal">I am <strong>Dr. Niloufar Dabestani</strong>, a Postdoctoral Researcher at the <strong>Railways &amp; Transport Laboratory, National Technical University of Athens (NTUA)</strong>, working on demand-responsive transport systems, multimodal mobility, and sustainable urban transportation.</p>
-          <p class="reveal d1">I serve as <strong>Technical Coordinator</strong> of the EU Horizon project <strong>periASTY</strong> — responsible for research alignment, deliverables, milestone monitoring, and consortium coordination, addressing mobility, energy, industrial, and governance innovations for peri-urban decarbonization.</p>
-          <p class="reveal d2">My <strong>PhD</strong> (2022–2025) was completed at the Dynamic Systems &amp; Simulation Laboratory (DSSL), Technical University of Crete, under the supervision of Prof. Ioannis Papamichail and Prof. Markos Papageorgiou, within the <strong>TrafficFluid</strong> ERC Advanced Grant (Horizon 2020, no. 833915).</p>
-          <p class="reveal d3">I supervise PhD and master's students, contribute to EU Horizon proposals, and serve as peer reviewer for top international journals and conferences.</p>
+          <p class="reveal">I am <strong>Dr. Niloufar Dabestani</strong>, a Postdoctoral Researcher at the <strong>Railways &amp; Transport Laboratory, National Technical University of Athens (NTUA)</strong>, working on demand-responsive transport systems and multimodal mobility. I serve as <strong>Technical Coordinator</strong> of the EU Horizon project <strong>periASTY</strong> — responsible for research alignment, deliverables, milestone monitoring, and consortium coordination, addressing mobility, energy, industrial, and governance innovations for peri-urban areas.</p>
+
+          <p class="reveal d1">I have a strong background in Control Engineering across all academic levels, having earned a bachelor's degree in Electrical Engineering (Control) and a master's degree in Electrical and Mechatronics Engineering with a specialization in Instrumentation Systems. My <strong>PhD</strong> (2022–2025) was completed at the Dynamic Systems &amp; Simulation Laboratory (DSSL), Technical University of Crete, under the supervision of <a href="https://scholar.google.com/citations?user=SzYVgogAAAAJ&hl=en" target="_blank" rel="noopener">Prof. Ioannis Papamichail</a> and <a href="https://scholar.google.com/citations?user=sr8TOTQAAAAJ&hl=en" target="_blank" rel="noopener">Prof. Markos Papageorgiou</a>, within the <a href="https://www.trafficfluid.tuc.gr/en/home" target="_blank" rel="noopener">TrafficFluid</a> ERC Advanced Grant (Horizon 2020, no. 833915).</p>
+
+          <p class="reveal d2">During my doctoral research, I explored optimal control strategies for lane-free vehicular traffic, including the formation and control of interruptible vehicle platoons, deformable two-dimensional vehicle flocks, and large-scale joint trajectory optimization for connected and automated vehicles operating on lane-free infrastructures. My work draws on constrained nonlinear optimal control, model predictive control, numerical optimization methods, and microscopic traffic flow modeling.</p>
+
+          <p class="reveal d3">I supervise PhD and master's students, contribute to EU Horizon proposals, and serve as peer reviewer for top international journals and conferences, and actively collaborate with international research partners on ongoing and forthcoming publications.</p>
         </div>
+
         <div class="reveal d1">
           <div class="info-block">
             <h3>Current Position</h3>
@@ -358,12 +366,14 @@
             <div class="info-row"><span class="info-key">Since</span><span class="info-val">December 2025</span></div>
             <div class="info-row"><span class="info-key">Email</span><span class="info-val"><a href="mailto:ndabestani@civil.ntua.gr">ndabestani@civil.ntua.gr</a></span></div>
           </div>
+          <!-- ★ CHANGE 3: added MED Conference to peer review list -->
           <div class="info-block">
             <h3>Peer Review Service</h3>
             <div class="info-row"><span class="info-key">IEEE T-ITS</span><span class="info-val" style="color:var(--teal)">Reviewer</span></div>
             <div class="info-row"><span class="info-key">TRC · TRR</span><span class="info-val" style="color:var(--teal)">Reviewer</span></div>
             <div class="info-row"><span class="info-key">IEEE ITSC · IV</span><span class="info-val" style="color:var(--teal)">Reviewer</span></div>
             <div class="info-row"><span class="info-key">ECC · TRB</span><span class="info-val" style="color:var(--teal)">Reviewer</span></div>
+            <div class="info-row"><span class="info-key">MED Conference</span><span class="info-val" style="color:var(--teal)">Reviewer</span></div>
           </div>
         </div>
       </div>
@@ -376,26 +386,22 @@
       <p class="section-label reveal">Focus Areas</p>
       <h2 class="reveal">What I <span>work on</span></h2>
       <div class="divider reveal"></div>
+      <!-- ★ CHANGE 4: removed "Sustainable Mobility" card — only 3 cards now -->
       <div class="research-grid">
         <div class="research-card reveal">
           <div class="research-icon">🚗</div>
           <h3>Lane-Free Traffic</h3>
-          <p>Control strategies for autonomous vehicles operating without predefined lanes — maximizing road capacity in next-generation urban environments.</p>
+          <p>Control strategies for autonomous vehicles operating without predefined lanes — including interruptible platoons, deformable 2D flocks, and large-scale joint trajectory optimization for connected and automated vehicles.</p>
         </div>
         <div class="research-card reveal d1">
           <div class="research-icon">🎯</div>
           <h3>Optimal Control</h3>
-          <p>Trajectory and path planning algorithms using variational methods, nonlinear programming, and model predictive control for multi-vehicle coordination.</p>
+          <p>Constrained nonlinear optimal control, model predictive control, and numerical optimization methods applied to microscopic traffic flow modeling and multi-vehicle coordination.</p>
         </div>
         <div class="research-card reveal d2">
           <div class="research-icon">🚌</div>
           <h3>Demand-Responsive Transport</h3>
-          <p>Fleet sizing, routing, and scheduling for flexible on-demand mobility systems — including modular electric vehicles and opportunity charging.</p>
-        </div>
-        <div class="research-card reveal d3">
-          <div class="research-icon">🌍</div>
-          <h3>Sustainable Mobility</h3>
-          <p>EU Horizon research on peri-urban decarbonization, multimodal mobility integration, and climate-neutral transportation governance.</p>
+          <p>Fleet sizing, routing, and scheduling for flexible on-demand mobility systems — including modular electric vehicles, opportunity charging, and multimodal integration.</p>
         </div>
       </div>
     </div>
@@ -408,6 +414,7 @@
       <h2 class="reveal">Education &amp; <span>Experience</span></h2>
       <div class="divider reveal"></div>
       <div class="timeline">
+
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-date">December 2025 — Present</div>
@@ -420,22 +427,37 @@
             <li>Supervision of PhD and master's students in transport systems modelling.</li>
           </ul>
         </div>
+
         <div class="timeline-item reveal d1">
           <div class="timeline-dot"></div>
           <div class="timeline-date">January 2022 — November 2025</div>
           <div class="timeline-title">PhD, Production Engineering &amp; Management</div>
           <div class="timeline-sub">Dynamic Systems &amp; Simulation Lab (DSSL) · Technical University of Crete, Greece</div>
-          <p class="timeline-desc">Dissertation: <em>Optimal Control Strategies for Lane-free Vehicular Traffic</em>.<br>
-          Advisors: Prof. Ioannis Papamichail &amp; Prof. Markos Papageorgiou.<br>
-          Research associate — TrafficFluid ERC Advanced Grant (Horizon 2020, no. 833915).</p>
+          <!-- ★ CHANGE 5: linked advisor names and TrafficFluid -->
+          <p class="timeline-desc">
+            Dissertation: <em>Optimal Control Strategies for Lane-free Vehicular Traffic</em>.<br>
+            Advisors: <a href="https://scholar.google.com/citations?user=SzYVgogAAAAJ&hl=en" target="_blank" rel="noopener">Prof. Ioannis Papamichail</a> &amp; <a href="https://scholar.google.com/citations?user=sr8TOTQAAAAJ&hl=en" target="_blank" rel="noopener">Prof. Markos Papageorgiou</a>.<br>
+            Research associate — <a href="https://www.trafficfluid.tuc.gr/en/home" target="_blank" rel="noopener">TrafficFluid</a> ERC Advanced Grant (Horizon 2020, no. 833915).
+          </p>
         </div>
+
         <div class="timeline-item reveal d2">
           <div class="timeline-dot dim"></div>
           <div class="timeline-date dim">2019 — 2021</div>
           <div class="timeline-title">Low Voltage Systems Designer</div>
           <div class="timeline-sub">Kharazm Power Engineering Group, Iran</div>
-          <p class="timeline-desc">Design of electrical substations for large-scale industrial infrastructure.</p>
+          <p class="timeline-desc">Design of low voltage systems for electrical substations at large-scale industrial infrastructure.</p>
         </div>
+
+        <!-- ★ CHANGE 6: added Trans Post Pars -->
+        <div class="timeline-item reveal d3">
+          <div class="timeline-dot dim"></div>
+          <div class="timeline-date dim">2019</div>
+          <div class="timeline-title">Project Engineer</div>
+          <div class="timeline-sub">Trans Post Pars Company, Iran</div>
+          <p class="timeline-desc">Project engineering for electrical substations.</p>
+        </div>
+
         <div class="timeline-item reveal d3">
           <div class="timeline-dot dim"></div>
           <div class="timeline-date dim">2014 — 2017</div>
@@ -443,6 +465,16 @@
           <div class="timeline-sub">Amirkabir University of Technology, Iran</div>
           <p class="timeline-desc">Thesis: Nonlinear identification of excitation control systems (AVR) and re-tuning of Power System Stabilizer (PSS) parameters.</p>
         </div>
+
+        <!-- ★ CHANGE 7: added Nirou Trans -->
+        <div class="timeline-item reveal d4">
+          <div class="timeline-dot dim"></div>
+          <div class="timeline-date dim">2014</div>
+          <div class="timeline-title">Electrical Quality Control Engineer</div>
+          <div class="timeline-sub">Nirou Trans Company, Iran</div>
+          <p class="timeline-desc">Quality control engineering for electrical systems.</p>
+        </div>
+
         <div class="timeline-item reveal d4">
           <div class="timeline-dot dim"></div>
           <div class="timeline-date dim">2009 — 2013</div>
@@ -450,6 +482,16 @@
           <div class="timeline-sub">Shiraz University, Iran</div>
           <p class="timeline-desc">Thesis: PID controller tuning using Fuzzy Logic — comparative analysis of tuning strategies.</p>
         </div>
+
+        <!-- ★ CHANGE 8: added PIDEC internship -->
+        <div class="timeline-item reveal d4">
+          <div class="timeline-dot dim"></div>
+          <div class="timeline-date dim">2013</div>
+          <div class="timeline-title">Internship — Instrumentation Department</div>
+          <div class="timeline-sub">PIDEC, Iran</div>
+          <p class="timeline-desc">Internship at the Instrumentation Department.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -467,6 +509,7 @@
         <button class="filter-btn" onclick="filterPubs('book',this)">Book Chapters</button>
       </div>
       <div class="pub-list">
+
         <div class="pub-item reveal" data-type="journal">
           <div class="pub-year">2025</div>
           <div class="pub-body">
@@ -476,6 +519,7 @@
             <div class="pub-badges"><span class="pb pb-j">Journal</span></div>
           </div>
         </div>
+
         <div class="pub-item reveal" data-type="journal">
           <div class="pub-year">2025</div>
           <div class="pub-body">
@@ -485,6 +529,7 @@
             <div class="pub-badges"><span class="pb pb-j">Journal</span><span class="pb pb-r">Under Review</span></div>
           </div>
         </div>
+
         <div class="pub-item reveal" data-type="journal">
           <div class="pub-year">2024</div>
           <div class="pub-body">
@@ -494,6 +539,7 @@
             <div class="pub-badges"><span class="pb pb-j">Journal</span></div>
           </div>
         </div>
+
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2026</div>
           <div class="pub-body">
@@ -503,6 +549,7 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span><span class="pb pb-s">Submitted</span></div>
           </div>
         </div>
+
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2026</div>
           <div class="pub-body">
@@ -512,6 +559,7 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span><span class="pb pb-s">Submitted</span></div>
           </div>
         </div>
+
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2025</div>
           <div class="pub-body">
@@ -521,6 +569,7 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span></div>
           </div>
         </div>
+
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2024</div>
           <div class="pub-body">
@@ -530,6 +579,7 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span><span class="pb pb-a">🏆 IFAC Young Author Award — 1st Place</span></div>
           </div>
         </div>
+
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2024</div>
           <div class="pub-body">
@@ -539,6 +589,7 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span></div>
           </div>
         </div>
+
         <div class="pub-item reveal" data-type="conference">
           <div class="pub-year">2023</div>
           <div class="pub-body">
@@ -548,6 +599,7 @@
             <div class="pub-badges"><span class="pb pb-c">Conference</span></div>
           </div>
         </div>
+
         <div class="pub-item reveal" data-type="book">
           <div class="pub-year">2024</div>
           <div class="pub-body">
@@ -557,6 +609,7 @@
             <div class="pub-badges"><span class="pb pb-b">Book Chapter</span></div>
           </div>
         </div>
+
       </div>
       <div style="text-align:center; margin-top:2.5rem;" class="reveal">
         <a href="https://scholar.google.com/citations?user=edrBuFUAAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-outline">
@@ -574,13 +627,16 @@
       <h2 class="reveal">Honors &amp; <span>Awards</span></h2>
       <div class="divider reveal"></div>
       <div class="awards-grid">
+
+        <!-- ★ CHANGE 9: IFAC award title linked to TUC article -->
         <div class="award-card reveal">
           <div class="award-icon">🥇</div>
           <div>
-            <h3>IFAC Young Author Award — 1st Place</h3>
+            <h3><a href="https://www.tuc.gr/en/university/in-the-spotlight/item/the-cts-2024-ifac-young-author-award-to-tuc-phd-student-niloufar-dabestani" target="_blank" rel="noopener">IFAC Young Author Award — 1st Place</a></h3>
             <p>IFAC CTS 2024 Conference, Ayia Napa, Cyprus — July 2024. Awarded for joint vehicle path planning research in lane-free traffic.</p>
           </div>
         </div>
+
         <div class="award-card reveal d1">
           <div class="award-icon">🥉</div>
           <div>
@@ -588,13 +644,15 @@
             <p>Oral presentation award, IEEE ITSS Young Professionals Travelling Fellowship Symposium, Chania, Greece — November 2022.</p>
           </div>
         </div>
+
         <div class="award-card reveal d2">
           <div class="award-icon">🇪🇺</div>
           <div>
             <h3>ERC TrafficFluid — Horizon 2020</h3>
-            <p>Research associate in the TrafficFluid ERC Advanced Grant project (Grant no. 833915) — one of Europe's most competitive grants.</p>
+            <p>Research associate in the <a href="https://www.trafficfluid.tuc.gr/en/home" target="_blank" rel="noopener">TrafficFluid</a> ERC Advanced Grant project (Grant no. 833915) — one of Europe's most competitive grants.</p>
           </div>
         </div>
+
         <div class="award-card reveal d3">
           <div class="award-icon">🪑</div>
           <div>
@@ -602,6 +660,7 @@
             <p>Session Co-Chair at the IFAC CTS Conference, Ayia Napa, Cyprus — July 2024.</p>
           </div>
         </div>
+
         <div class="award-card reveal d4">
           <div class="award-icon">⭐</div>
           <div>
@@ -609,6 +668,7 @@
             <p>Admitted to the National Organization for Development of Exceptional Talents (acceptance rate below 1%).</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -669,6 +729,13 @@
           </a>
           <a class="contact-link" href="https://scholar.google.com/citations?user=edrBuFUAAAAJ&hl=en" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17h2v-4.82L9 13.36V17h2v-4l1-.54 1 .54V17h2v-3.82l4-2.18V11h-2v3.18L12 16 3 11.18V9l9-5 9 5v2h-2V9l-8 4.47V17h2v-3.18l2-1.09L12 3z"/></svg>Google Scholar
+          </a>
+          <!-- ★ CHANGE 10: added both NTUA profile links -->
+          <a class="contact-link" href="http://railwaysandtransportlab.civil.ntua.gr/niloufar-dabestani/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>NTUA Rail &amp; Transport
+          </a>
+          <a class="contact-link" href="https://www.transport.ntua.gr/niloufar-dabestani/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>NTUA Transport
           </a>
           <a class="contact-link" href="https://www.trafficfluid.tuc.gr/en/people/phd-students/dabestani" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>TUC Profile
